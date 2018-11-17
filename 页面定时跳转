@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+<!--实现页面的定时跳转的功能-->
+	window.onload = function(){
+		var time = 5;
+		/* 获取span标签里面的时间 */
+		var secondEle = document.getElementById("second");
+		/* 编写定时器 */
+		var timer = setInterval(function(){
+			secondEle.innerHTML = time;
+			time--;
+		/* 当时间变为0实现跳转 */ 
+			if(time==0){
+				clearInterval(timer);
+				location.href="http://www.baidu.com";
+			}
+				
+		},1000);
+	}
+</script>
+</head>
+<body>
+	恭喜你，注册成功，<span style="color:red" id="second">5</span>秒钟后跳转，如不跳转点击<a href="http://www.baidu.com">这里</a>!
+</body>
+</html>
